@@ -97,6 +97,58 @@
                 android:textSize="24sp"
                 app:layout_constraintTop_toBottomOf="@id/headquartersInfo" />
 
+            <RadioGroup
+                android:id="@+id/exploreOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/explore">
+
+                <RadioButton
+                    android:id="@+id/rb_launches"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/launches" />
+                <RadioButton
+                    android:id="@+id/rb_launchpads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/launchpads" />
+                <RadioButton
+                    android:id="@+id/rb_landpads"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/landpads" />
+                <RadioButton
+                    android:id="@+id/rb_rockets"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rockets" />
+                <RadioButton
+                    android:id="@+id/rb_ships"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ships" />
+                <RadioButton
+                    android:id="@+id/rb_roadster"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/roadster" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btn_go"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="15pt"
+                android:layout_marginRight="15pt"
+                android:text="@string/go"
+                app:layout_constraintTop_toBottomOf="@id/exploreOptions"/>
+
             <TextView
                 android:id="@+id/websiteInfo"
                 android:layout_width="match_parent"
@@ -104,7 +156,7 @@
                 android:layout_marginTop="15dp"
                 android:paddingStart="15pt"
                 android:paddingEnd="15pt"
-                app:layout_constraintTop_toBottomOf="@id/explore" />
+                app:layout_constraintTop_toBottomOf="@id/btn_go" />
 
             <TextView
                 android:id="@+id/companySummary"
