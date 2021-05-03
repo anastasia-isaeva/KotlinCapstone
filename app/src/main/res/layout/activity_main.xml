@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/companyName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt" />
+
+            <TextView
+                android:id="@+id/foundedInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/companyName" />
+
+            <TextView
+                android:id="@+id/ceoInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/foundedInfo" />
+
+            <TextView
+                android:id="@+id/employeesSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/ceoInfo" />
+
+            <TextView
+                android:id="@+id/vehiclesSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/employeesSummary" />
+
+            <TextView
+                android:id="@+id/launchSitesSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/vehiclesSummary" />
+
+            <TextView
+                android:id="@+id/testSitesSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/launchSitesSummary" />
+
+            <TextView
+                android:id="@+id/headquartersInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/testSitesSummary" />
+
+            <TextView
+                android:id="@+id/explore"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                android:text="@string/explore"
+                android:textSize="24sp"
+                app:layout_constraintTop_toBottomOf="@id/headquartersInfo" />
+
+            <TextView
+                android:id="@+id/websiteInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/explore" />
+
+            <TextView
+                android:id="@+id/companySummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/websiteInfo" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
