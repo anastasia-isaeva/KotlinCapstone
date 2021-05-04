@@ -1,10 +1,12 @@
 package com.example.capstoneproject
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.ListView
 import android.widget.TextView
 import com.android.volley.Request
@@ -20,6 +22,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         getSpaceXcompanyInfo()
+
+        val button = findViewById<Button>(R.id.btn_go)
+        button.setOnClickListener(){
+            val intent = Intent(this, RoadsterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getSpaceXcompanyInfo() {
