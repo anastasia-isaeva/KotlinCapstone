@@ -6,25 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ShipsActivity">
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        tools:ignore="MissingConstraints">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="horizontal"
-            android:paddingTop="5dp">
-
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="24sp"
-                android:paddingStart="15pt"
-                android:paddingEnd="15pt" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:divider="#2196F3"
+        android:dividerHeight="1dp"
+        android:listSelector="#00D9FF"
+        android:paddingStart="15pt"
+        android:paddingEnd="15pt" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

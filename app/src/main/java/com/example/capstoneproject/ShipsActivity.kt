@@ -8,7 +8,9 @@ import android.os.Bundle
 import android.text.Html
 import android.webkit.WebChromeClient
 import android.webkit.WebView
+import android.widget.ArrayAdapter
 import android.widget.ImageView
+import android.widget.ListView
 import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -18,6 +20,8 @@ import org.json.JSONObject
 import org.json.JSONArray
 
 class ShipsActivity : AppCompatActivity() {
+    private var ships: ArrayList<Ship> = ArrayList()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ships)
@@ -40,15 +44,36 @@ class ShipsActivity : AppCompatActivity() {
         val stringReq = StringRequest(
             Request.Method.GET, url,
             { response ->
+                ships = ArrayList()
 
                 var strResp = response.toString()
                 val jsonArray: JSONArray = JSONArray(strResp)
 
                 var a = 1
 
+                for (i in 0 until jsonArray.length()) {
+                    val item: JSONObject = jsonArray.getJSONObject(i)
 
+                    val name = item.getString("name")
+                    val imageUrl = item.getString("image")
+                    val homePort = item.getString("home_port")
+                    var yearBuilt = 0
+                    if (!item.isNull("year_built")) {
+                        val yearBuilt = item.getInt("year_built")
+                    }
+                    val type = item.getString("type")
+
+                    val ship = Ship(name, imageUrl, homePort, yearBuilt, type)
+                    ships.add(ship)
+                }
+
+                val list = ships.map { it.toString() }.toTypedArray()
+                val arrayAdapter: ArrayAdapter<*>
+                var shipsList = findViewById<ListView>(R.id.listview)
+                arrayAdapter = ArrayAdapter(this, R.layout.rowlist, list)
+                shipsList.adapter = arrayAdapter
             },
-            {  })
+            { })
         queue.add(stringReq)
     }
 }

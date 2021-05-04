@@ -5,10 +5,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Html
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.ListView
-import android.widget.TextView
+import android.widget.*
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -25,6 +22,12 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.btn_go)
         button.setOnClickListener(){
+            val intent = Intent(this, LaunchesActivity::class.java)
+            startActivity(intent)
+        }
+
+        val radioButton = findViewById<RadioButton>(R.id.rb_ships)
+        radioButton.setOnClickListener(){
             val intent = Intent(this, ShipsActivity::class.java)
             startActivity(intent)
         }
