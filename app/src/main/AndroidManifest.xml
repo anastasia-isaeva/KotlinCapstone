@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
         <activity
+            android:name=".LandpadsDetailsActivity"
+            android:parentActivityName=".LandpadsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LandpadsActivity" />
+        </activity>
+        <activity
             android:name=".ShipDetailsActivity"
             android:parentActivityName=".ShipsActivity">
             <meta-data

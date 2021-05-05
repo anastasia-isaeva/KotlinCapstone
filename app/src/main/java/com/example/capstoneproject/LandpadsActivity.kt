@@ -1,5 +1,6 @@
 package com.example.capstoneproject
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +19,17 @@ class LandpadsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landpads)
         this.title = "Landpads Info"
+
+        val myList = findViewById<ListView>(R.id.listview)
+        myList.setOnItemClickListener{ parent, view, position, id ->
+            val landpad = landpads[position]
+            val bundle = Bundle()
+
+            val intent = Intent(this, LandpadsDetailsActivity::class.java)
+            bundle.putParcelable("Landpad", landpad)
+            intent.putExtra("Bundle", bundle)
+            startActivity(intent)
+        }
 
         getLandpadsInfo()
     }
