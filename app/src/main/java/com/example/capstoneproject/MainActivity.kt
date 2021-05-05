@@ -14,47 +14,44 @@ import org.json.JSONArray
 import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
+    var nextPage: Intent = Intent()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        nextPage = Intent(this, LaunchpadsActivity::class.java)
 
         getSpaceXcompanyInfo()
 
         val button = findViewById<Button>(R.id.btn_go)
         button.setOnClickListener(){
-            val intent = Intent(this, LandpadsActivity::class.java)
-            startActivity(intent)
+            startActivity(nextPage)
         }
 
         val radioButton = findViewById<RadioButton>(R.id.rb_ships)
         radioButton.setOnClickListener(){
-            val intent = Intent(this, ShipsActivity::class.java)
-            startActivity(intent)
+            nextPage = Intent(this, ShipsActivity::class.java)
         }
-
 
         val radioButtonLaunchpads = findViewById<RadioButton>(R.id.rb_launchpads)
         radioButtonLaunchpads.setOnClickListener(){
-            val intent = Intent(this, LaunchpadsActivity::class.java)
-            startActivity(intent)
+            nextPage = Intent(this, LaunchpadsActivity::class.java)
         }
 
         val radioButtonLandpads = findViewById<RadioButton>(R.id.rb_landpads)
         radioButtonLandpads.setOnClickListener(){
-            val intent = Intent(this, LandpadsActivity::class.java)
-            startActivity(intent)
+            nextPage = Intent(this, LandpadsActivity::class.java)
         }
 
         val radioButtonRockets = findViewById<RadioButton>(R.id.rb_rockets)
         radioButtonRockets.setOnClickListener(){
-            val intent = Intent(this, RocketsActivity::class.java)
-            startActivity(intent)
+            nextPage = Intent(this, RocketsActivity::class.java)
         }
 
         val radioButtonRoadster = findViewById<RadioButton>(R.id.rb_roadster)
         radioButtonRoadster.setOnClickListener(){
-            val intent = Intent(this, RoadsterActivity::class.java)
-            startActivity(intent)
+            nextPage = Intent(this, RoadsterActivity::class.java)
         }
     }
 

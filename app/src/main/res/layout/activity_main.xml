@@ -111,7 +111,8 @@
                     android:id="@+id/rb_launchpads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/launchpads" />
+                    android:text="@string/launchpads"
+                    android:checked="true" />
                 <RadioButton
                     android:id="@+id/rb_landpads"
                     android:layout_width="match_parent"
