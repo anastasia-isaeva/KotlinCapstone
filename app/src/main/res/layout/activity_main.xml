@@ -108,11 +108,6 @@
                 app:layout_constraintTop_toBottomOf="@id/explore">
 
                 <RadioButton
-                    android:id="@+id/rb_launches"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/launches" />
-                <RadioButton
                     android:id="@+id/rb_launchpads"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

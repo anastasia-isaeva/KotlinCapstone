@@ -31,6 +31,31 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ShipsActivity::class.java)
             startActivity(intent)
         }
+
+
+        val radioButtonLaunchpads = findViewById<RadioButton>(R.id.rb_launchpads)
+        radioButtonLaunchpads.setOnClickListener(){
+            val intent = Intent(this, LaunchpadsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val radioButtonLandpads = findViewById<RadioButton>(R.id.rb_landpads)
+        radioButtonLandpads.setOnClickListener(){
+            val intent = Intent(this, LandpadsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val radioButtonRockets = findViewById<RadioButton>(R.id.rb_rockets)
+        radioButtonRockets.setOnClickListener(){
+            val intent = Intent(this, RocketsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val radioButtonRoadster = findViewById<RadioButton>(R.id.rb_roadster)
+        radioButtonRoadster.setOnClickListener(){
+            val intent = Intent(this, RoadsterActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun getSpaceXcompanyInfo() {
