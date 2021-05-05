@@ -5,7 +5,7 @@ import android.os.Parcelable
 
 class Rockets(
     val name: String?,
-    val homePort: String?,
+    val description: String?,
     val imageUrl: String?
 ) : Parcelable {
 
@@ -22,7 +22,7 @@ class Rockets(
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeString(name)
-        parcel.writeString(homePort)
+        parcel.writeString(description)
         parcel.writeString(imageUrl)
     }
 

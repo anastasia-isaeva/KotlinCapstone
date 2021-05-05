@@ -12,6 +12,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
         <activity
+            android:name=".RockersDetailsActivity">
+            android:parentActivityName=".RocketsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".RocketsActivity" />
+        </activity>
+        <activity android:name=".LaunchpadsDetailsActivity">
+            android:parentActivityName=".LaunchpadsActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".LandpadsActivity" />
+        </activity>
+        <activity
             android:name=".LandpadsDetailsActivity"
             android:parentActivityName=".LandpadsActivity">
             <meta-data

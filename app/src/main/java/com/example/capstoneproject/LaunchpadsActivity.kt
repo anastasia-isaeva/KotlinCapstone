@@ -1,5 +1,6 @@
 package com.example.capstoneproject
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -26,6 +27,17 @@ class LaunchpadsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_launchpads)
         this.title = "Launchpads Info"
+
+        val myList = findViewById<ListView>(R.id.listview)
+        myList.setOnItemClickListener{ parent, view, position, id ->
+            val launchpad = launchpads[position]
+            val bundle = Bundle()
+
+            val intent = Intent(this, LaunchpadsDetailsActivity::class.java)
+            bundle.putParcelable("Launchpad", launchpad)
+            intent.putExtra("Bundle", bundle)
+            startActivity(intent)
+        }
 
         getLaunchpadsInfo()
     }
