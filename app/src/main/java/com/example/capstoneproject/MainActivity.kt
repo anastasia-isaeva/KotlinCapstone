@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.btn_go)
         button.setOnClickListener(){
-            val intent = Intent(this, LaunchesActivity::class.java)
+            val intent = Intent(this, LandpadsActivity::class.java)
             startActivity(intent)
         }
 

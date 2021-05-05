@@ -1,36 +1,28 @@
 package com.example.capstoneproject
 
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Html
-import android.webkit.WebChromeClient
-import android.webkit.WebView
 import android.widget.ArrayAdapter
-import android.widget.ImageView
 import android.widget.ListView
-import android.widget.TextView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.squareup.picasso.Picasso
-import org.json.JSONObject
 import org.json.JSONArray
+import org.json.JSONObject
 
-class ShipsActivity : AppCompatActivity() {
-    private var ships: ArrayList<Ship> = ArrayList()
+class LandpadsActivity : AppCompatActivity() {
+    private var landpads: ArrayList<Landpad> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_ships)
-        this.title = "Ships Info"
+        setContentView(R.layout.activity_landpads)
+        this.title = "Landpads Info"
 
-        getShipsInfo()
+        getLandpadsInfo()
     }
 
-    private fun getShipsInfo() {
+    private fun getLandpadsInfo() {
         val queue = Volley.newRequestQueue(this)
 
         val builder = Uri.Builder()
@@ -38,40 +30,36 @@ class ShipsActivity : AppCompatActivity() {
         builder.scheme("https")
             .authority("api.spacexdata.com")
             .appendPath("v4")
-            .appendPath("ships")
+            .appendPath("landpads")
         val url: String = builder.build().toString();
 
         val stringReq = StringRequest(
             Request.Method.GET, url,
             { response ->
-                ships = ArrayList()
+                landpads = ArrayList()
 
                 var strResp = response.toString()
                 val jsonArray: JSONArray = JSONArray(strResp)
-
                 for (i in 0 until jsonArray.length()) {
                     val item: JSONObject = jsonArray.getJSONObject(i)
 
-                    val name = item.getString("name")
-                    val imageUrl = item.getString("image")
-                    val homePort = item.getString("home_port")
-                    var yearBuilt = 0
-                    if (!item.isNull("year_built")) {
-                        yearBuilt = item.getInt("year_built")
-                    }
+                    val name = item.getString("full_name")
+                    val details = item.getString("details")
                     val type = item.getString("type")
+                    val locality = item.getString("locality")
+                    val region = item.getString("region")
 
-                    val ship = Ship(name, imageUrl, homePort, yearBuilt, type)
-                    ships.add(ship)
+                    val landpad = Landpad(name, details, type, locality, region)
+                    landpads.add(landpad)
                 }
 
-                val list = ships.map { it.toString() }.toTypedArray()
+                val list = landpads.map { it.toString() }.toTypedArray()
                 val arrayAdapter: ArrayAdapter<*>
-                var shipsList = findViewById<ListView>(R.id.listview)
+                var landpadList = findViewById<ListView>(R.id.listview)
                 arrayAdapter = ArrayAdapter(this, R.layout.rowlist, list)
-                shipsList.adapter = arrayAdapter
+                landpadList.adapter = arrayAdapter
             },
-            { })
+            {  })
         queue.add(stringReq)
     }
 }
