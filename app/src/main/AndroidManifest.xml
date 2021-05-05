@@ -11,10 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CapstoneProject">
-        <activity android:name=".LaunchesActivity">android:parentActivityName=".MainActivity">
+        <activity
+            android:name=".ShipDetailsActivity"
+            android:parentActivityName=".ShipsActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity" />
+                android:value=".ShipsActivity" />
         </activity>
         <activity android:name=".LaunchpadsActivity">
             android:parentActivityName=".MainActivity">

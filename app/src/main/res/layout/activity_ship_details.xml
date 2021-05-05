@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ShipDetailsActivity">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        tools:ignore="MissingConstraints">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal"
+            android:paddingTop="5dp">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt" />
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/name" />
+
+            <TextView
+                android:id="@+id/homePort"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/type" />
+
+            <TextView
+                android:id="@+id/yearBuilt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/homePort" />
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:paddingStart="15pt"
+                android:paddingEnd="15pt"
+                app:layout_constraintTop_toBottomOf="@id/yearBuilt" />
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

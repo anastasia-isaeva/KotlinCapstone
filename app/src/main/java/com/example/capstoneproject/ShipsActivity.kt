@@ -1,5 +1,6 @@
 package com.example.capstoneproject
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -26,6 +27,17 @@ class ShipsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_ships)
         this.title = "Ships Info"
+
+        val myList = findViewById<ListView>(R.id.listview)
+        myList.setOnItemClickListener{ parent, view, position, id ->
+            val ship = ships[position]
+            val bundle = Bundle()
+
+            val intent = Intent(this, ShipDetailsActivity::class.java)
+            bundle.putParcelable("Ship", ship)
+            intent.putExtra("Bundle", bundle)
+            startActivity(intent)
+        }
 
         getShipsInfo()
     }
